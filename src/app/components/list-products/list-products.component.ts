@@ -4,7 +4,7 @@ import { ColDef } from 'ag-grid-community';
 @Component({
   selector: 'app-list-products',
   templateUrl: './list-products.component.html',
-  styleUrls: ['./list-products.component.css']
+  styleUrls: ['./list-products.component.scss']
 })
 export class ListProductsComponent implements OnInit {
 

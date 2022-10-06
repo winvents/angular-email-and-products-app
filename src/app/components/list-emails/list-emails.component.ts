@@ -2,16 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { EmailList } from 'src/app/shared/model/email-list.model';
 import { Email } from 'src/app/shared/model/email.model';
 import { EmailService } from 'src/app/shared/services/email.service';
+import { ColDef } from 'ag-grid-community';
 
 @Component({
   selector: 'app-list-emails',
   templateUrl: './list-emails.component.html',
-  styleUrls: ['./list-emails.component.css']
+  styleUrls: ['./list-emails.component.scss']
 })
 export class ListEmailsComponent implements OnInit {
 
   public emailRowData: Email[] = [];
-  public emailColumnDefs = [
+  public emailColumnDefs: ColDef[] = [
     {field: 'emailId', headerName: 'id'},
     {field: 'emailFrom', headerName: 'from'},
     {field: 'emailTo', headerName: 'to'},
