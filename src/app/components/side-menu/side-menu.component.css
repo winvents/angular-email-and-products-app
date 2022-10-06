@@ -1,0 +1,25 @@
+mat-toolbar {
+    background: linear-gradient(90deg, rgba(0, 32, 47, 1) 0%, rgba(0, 91, 134, 1) 100%);
+
+}
+
+mat-toolbar a {
+    padding: 3rem;
+    text-decoration: none;
+    color: #dadada;
+}
+
+mat-toolbar h1 {
+    padding: 3rem;
+}
+
+mat-toolbar a:hover {
+    color: #ffffff;
+}
+
+.title {
+    font-family: 'Red Hat Display', sans-serif;
+    color: #5eccff;
+    font-weight: bold;
+}
+

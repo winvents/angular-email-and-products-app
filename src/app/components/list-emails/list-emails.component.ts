@@ -13,13 +13,16 @@ import { MatSort } from '@angular/material/sort';
 })
 export class ListEmailsComponent implements OnInit {
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+}
+
   public emailRowData: Email[] = [];
   
   displayedColumns: string[] = [
     'dateSent',
-    'emailFrom',
     'emailTo',
-    'emailStatus',
     'subject',
     'text'
   ]

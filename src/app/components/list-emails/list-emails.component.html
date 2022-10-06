@@ -9,19 +9,14 @@
   <div class="content-table">
     <table class="darkMode" mat-table [dataSource]="dataSource" matSort>
 
+      <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search columns" #input>
+    </mat-form-field>
+
       <ng-container matColumnDef="dateSent">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Date sent </th>
-        <td mat-cell *matCellDef="let element"> {{element.dateSent}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="emailStatus">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
-        <td mat-cell *matCellDef="let element"> {{element.emailStatus}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="emailFrom">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> From </th>
-        <td mat-cell *matCellDef="let element"> {{element.emailFrom}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.dateSent | date: 'dd/MM/yyyy'}} </td>
       </ng-container>
 
       <ng-container matColumnDef="emailTo">

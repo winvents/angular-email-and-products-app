@@ -1,0 +1,18 @@
+.app-toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+mat-toolbar {
+    background: linear-gradient(90deg, rgba(0,32,47,1) 0%, rgba(0,91,134,1) 100%);
+
+}
+
+mat-toolbar h1 {
+    font-family: 'Red Hat Display', sans-serif;
+    color: #5eccff;
+    font-weight: bold;
+}
