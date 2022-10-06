@@ -6,6 +6,7 @@ import { ListProductsComponent } from './components/list-products/list-products.
 import { ListEmailsComponent } from './components/list-emails/list-emails.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -14,9 +15,10 @@ import { AppRoutingModule } from './app-routing.module';
     ListEmailsComponent
   ],
   imports: [
+    AgGridModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { environment } from 'src/app/environments/environment';
-import { EmailList } from '../model/email-list';
+import { EmailList } from '../model/email-list.model';
 
 @Injectable({
   providedIn: 'root'

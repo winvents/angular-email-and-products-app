@@ -1,4 +1,4 @@
-import { Email } from "./email";
+import { Email } from "./email.model";
 
 export interface EmailList {
     emails: Email[];

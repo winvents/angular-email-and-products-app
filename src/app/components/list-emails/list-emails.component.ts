@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailList } from 'src/app/shared/model/email-list.model';
+import { Email } from 'src/app/shared/model/email.model';
+import { EmailService } from 'src/app/shared/services/email.service';
 
 @Component({
   selector: 'app-list-emails',
@@ -7,9 +10,53 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListEmailsComponent implements OnInit {
 
-  constructor() { }
+  public emailRowData: Email[] = [];
+  public emailColumnDefs = [
+    {field: 'emailId', headerName: 'id'},
+    {field: 'emailFrom', headerName: 'from'},
+    {field: 'emailTo', headerName: 'to'},
+    {field: 'emailStatus', headerName: 'status'},
+    {field: 'subject', headerName: 'subject'},
+    {field: 'text', headerName: 'text'},
+    {field: 'dateSent', headerName: 'date'},
+  ]
+
+  public emailDefaultColDef = {
+    sortable: true,
+    filter: true,
+    minWidth: 90,
+    width: 90,
+    flex: 1,
+    autoHeight: true,
+    resizable: true,
+    cellStyle: { 'white-space': 'normal' }
+  };
+
+  constructor(
+    private emailService: EmailService,
+  ) { }
+
+  private emailServiceSubscription: any;
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData(): void {
+    this.emailServiceSubscription = this.emailService.getEmails().subscribe({
+      next: (data: EmailList) => {
+        this.emailRowData = data.emails;
+        console.log(data);
+      },
+      error: () => {
+        alert('Error retrieving email data.');
+      }
+    })
+  }
+
+  ngOnDestroy(): void {
+    if (this.emailServiceSubscription)
+      this.emailServiceSubscription.unsubscribe();
   }
 
 }
