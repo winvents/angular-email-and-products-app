@@ -1,27 +1,57 @@
-# EmailAndProductsDashboard
+# 🦅 **Aplicação Angular - Email and Products App**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+**Microservice And Web Engineering**
 
-## Development server
+* *Turma:* 3SIT FIAP
+* *Graduação:* Sistemas de Informação
+* *Ano:* 2022
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+| Autor               | RM                                                |
+| ----------------- | ---------------------------------------------------------------- |
+| Isabela Caovila Baldim        | 84141 |
+| João Vitor Mendes Maria       | 85041 |
+| Jonathan Rodrigues Gonçalves  | 85312 |
+| Lucas Remedi Markarian Pavão  | 84451 |
+| Matheus Nathan Modanez        | 86065 |
 
-## Code scaffolding
+## 👨🏻‍💻 O Projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Nossa aplicação se trata de um webapp desenvolvido em Angular com utilização das bibliotecas material para estilização e exibição de tabelas paginadas. Os dados são consumidos de duas APIs.
 
-## Build
+# Setup
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Antes de rodar o comando para subir a aplicação, é preciso ter os serviços do backend de pé (email-api e products-api).
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para os dados serem renderizados, precisamos através do Postman realizar a criação das entidades.
 
-## Running end-to-end tests
+✉️ Envio de e-mail
+------------------------------------------------------------------------
+Abra o arquivo 
+``` 
+email-api.postman_collection.json
+``` 
+que se encontra em
+``` 
+\email-api\application\src\main\docs\postman 
+```
+Rode o script **Send Email**.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+➕ Criação de categoria e produto
+------------------------------------------------------------------------
+Agora abra o arquivo 
+``` 
+product-api.postman_collection
+``` 
+que se encontra em
+``` 
+\product-api\product\src\main\docs\postman
+```
+Rode os scripts *Create new cathegory* e *Create new product*.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Subindo a aplicação Angular
+------------------------------------------------------------------------
+Utilize o comando
+```
+npm start
+```
