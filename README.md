@@ -21,9 +21,7 @@ Nossa aplicação se trata de um webapp desenvolvido em Angular com utilização
 # Setup
 
 Antes de rodar o comando para subir a aplicação, é preciso ter os serviços do backend de pé (email-api e products-api).
-
-
-Para os dados serem renderizados, precisamos através do Postman realizar a criação das entidades.
+Além disso, para os dados serem renderizados, precisamos através do Postman realizar a criação das entidades.
 
 ✅ Envio de e-mail
 ------------------------------------------------------------------------
