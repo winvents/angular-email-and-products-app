@@ -6,7 +6,14 @@ import { ListProductsComponent } from './components/list-products/list-products.
 import { ListEmailsComponent } from './components/list-emails/list-emails.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { AgGridModule } from 'ag-grid-angular';
+
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,10 +22,16 @@ import { AgGridModule } from 'ag-grid-angular';
     ListEmailsComponent
   ],
   imports: [
-    AgGridModule,
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

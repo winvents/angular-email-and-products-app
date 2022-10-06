@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { environment } from 'src/app/environments/environment';
 import { EmailList } from '../model/email-list.model';
+import { Email } from '../model/email.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +28,8 @@ export class EmailService {
       'Something bad happened; please try again later.');
   }
 
-  public getEmails(): Observable<EmailList> {
-    return this.http.get<EmailList>(EmailService.API_URLS.GET_ALL_EMAILS)
+  public getEmails() {
+    return this.http.get(EmailService.API_URLS.GET_ALL_EMAILS)
   }
 
 }
