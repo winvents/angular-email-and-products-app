@@ -1,49 +1,47 @@
-<p>list-emails works!</p>
-
-
 <div class="content-container darkMode">
-    <div class="content-header">
-      <div>
-        <h1>
-          Emails
-        </h1>
-      </div>
-    </div>
+  <div class="content-header">
     <div>
-      <table class="darkMode" mat-table [dataSource]="dataSource" matSort>
-
-        <ng-container matColumnDef="dateSent">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date sent </th>
-          <td mat-cell *matCellDef="let element"> {{element.dateSent}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="emailStatus">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
-          <td mat-cell *matCellDef="let element"> {{element.emailStatus}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="emailFrom">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> From </th>
-          <td mat-cell *matCellDef="let element"> {{element.emailFrom}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="emailTo">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> To </th>
-          <td mat-cell *matCellDef="let element"> {{element.emailTo}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="subject">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Subject </th>
-          <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="text">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Text </th>
-          <td mat-cell *matCellDef="let element"> {{element.text}} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>    </div>
+      <h1>
+        Sent Emails
+      </h1>
+    </div>
   </div>
+  <div class="content-table">
+    <table class="darkMode" mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="dateSent">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date sent </th>
+        <td mat-cell *matCellDef="let element"> {{element.dateSent}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="emailStatus">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.emailStatus}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="emailFrom">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> From </th>
+        <td mat-cell *matCellDef="let element"> {{element.emailFrom}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="emailTo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> To </th>
+        <td mat-cell *matCellDef="let element"> {{element.emailTo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="subject">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Subject </th>
+        <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="text">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Text </th>
+        <td mat-cell *matCellDef="let element"> {{element.text}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
