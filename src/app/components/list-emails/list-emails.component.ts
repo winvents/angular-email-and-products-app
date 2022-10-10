@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { EmailList } from 'src/app/shared/model/email-list.model';
 import { Email } from 'src/app/shared/model/email.model';
 import { EmailService } from 'src/app/shared/services/email.service';
 import { MatTableDataSource } from '@angular/material/table';

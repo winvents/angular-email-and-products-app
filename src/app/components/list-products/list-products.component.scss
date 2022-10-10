@@ -1,11 +1,17 @@
 table {
     width: 100%;
-  }
-  
-  .content-table {
+}
+
+.content-table {
     padding: 0px 3rem;
-  }
-  
-  .content-header {
+}
+
+.content-header {
     text-align: center;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
   }

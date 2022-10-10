@@ -21,7 +21,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
 
 registerLocaleData(localePt, 'pt');
 
@@ -30,7 +33,8 @@ registerLocaleData(localePt, 'pt');
     AppComponent,
     ListProductsComponent,
     ListEmailsComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,10 @@ registerLocaleData(localePt, 'pt');
     MatSidenavModule,
     MatDividerModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]

@@ -2,10 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { ColDef } from 'ag-grid-community';
-import { Email } from 'src/app/shared/model/email.model';
+
 import { Product } from 'src/app/shared/model/product.model';
 import { ProductService } from 'src/app/shared/services/product.service';
+import { Router } from '@angular/router';
+import Constants from 'src/app/shared/utils/constants';
 
 @Component({
   selector: 'app-list-products',
@@ -30,6 +31,7 @@ export class ListProductsComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -42,6 +44,9 @@ export class ListProductsComponent implements OnInit {
     let resp = this.productService.getProducts();
     console.log(resp)
     resp.subscribe(productData => this.dataSource.data = productData as Product[])
+  }
 
+  createNewProduct() {
+    this.router.navigate([Constants.URL_ADD_PRODUCT]);
   }
 }

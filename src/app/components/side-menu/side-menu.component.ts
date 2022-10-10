@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Constants from 'src/app/shared/constants';
+import Constants from 'src/app/shared/utils/constants';
 
 @Component({
   selector: 'app-side-menu',
