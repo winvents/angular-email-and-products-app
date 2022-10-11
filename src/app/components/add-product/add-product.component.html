@@ -6,21 +6,22 @@
     </div>
     <form (submit)="saveProduct()" [formGroup]="createProductForm" class="form">
         <div class="form-content">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" 
+            >
                 <mat-label style="color:rgb(171, 171, 171)">Name</mat-label>
-                <input matInput>
+                <input formControlName="name" matInput>
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" >
                 <mat-label style="color:rgb(171, 171, 171)">Price</mat-label>
-                <input matInput>
+                <input formControlName="price" matInput>
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" >
                 <mat-label style="color:rgb(171, 171, 171)">Amount Available</mat-label>
-                <input matInput>
+                <input formControlName="amountAvailable" matInput>
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" >
                 <mat-label style="color:rgb(171, 171, 171)">Description</mat-label>
-                <input matInput>
+                <input formControlName="description" matInput>
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label style="color:rgb(171, 171, 171)">Cathegory</mat-label>

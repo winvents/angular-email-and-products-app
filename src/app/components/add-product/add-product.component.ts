@@ -16,18 +16,16 @@ import Constants from 'src/app/shared/utils/constants';
 })
 export class AddProductComponent implements OnInit {
 
-  private product!: Product;
-  public cathegories!: Cathegory[];
+  public cathegories: Cathegory[] = [];
+  public product!: Product;
 
   public createProductForm: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
     price: new FormControl('', [Validators.required]),
     amountAvailable: new FormControl('', [Validators.required]),
-    description: new FormControl('', [Validators.required]),
-    cathegoryId: new FormControl('', [Validators.required]),
+    description: new FormControl(''),
+    cathegoryId: new FormControl(''),
   });
-
-  private infosServicesSubscription: any;
 
   constructor(
     private productService: ProductService,
@@ -36,36 +34,29 @@ export class AddProductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.fetchData()
   }
 
-  ngOnDestroy(): void {
-    if (this.infosServicesSubscription)
-      this.infosServicesSubscription.unsubscribe();
-  }
-    
   fetchData(): void {
-    this.infosServicesSubscription = combineLatest([
-      this.cathegoryService.getCathegories()
-    ]).subscribe({
-      next: ([dataCathegories]: any[]) => {
-        this.cathegories = dataCathegories.cathegories;
-      },
-    });
+    let resp = this.cathegoryService.getCathegories();
+    console.log(resp)
+    resp.subscribe(cathegoriesData => this.cathegories = cathegoriesData as Cathegory[])
+
   }
 
   createNewProduct() {
     this.router.navigate([Constants.URL_ADD_PRODUCT]);
   }
 
-  private onSaveCompleted(c: any): void {
-    this.router.navigateByUrl(Constants.URL_LIST_PRODUCTS);
-  }
-
   saveProduct(): void {
-    const dataToBeSaved = { ...this.product, ...this.createProductForm.value};
+    const dataToBeSaved = { ...this.product, ...this.createProductForm.value };
     this.productService.saveProduct(dataToBeSaved).subscribe({
       next: (resp) => this.onSaveCompleted(resp),
     });
+  }
+
+  private onSaveCompleted(savedData: any): void {
+    this.router.navigateByUrl(Constants.URL_LIST_PRODUCTS);
   }
 
 }
