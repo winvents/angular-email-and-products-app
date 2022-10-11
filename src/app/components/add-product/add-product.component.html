@@ -4,32 +4,35 @@
             Create new Product
         </h1>
     </div>
-    <div class="form-content">
-        <mat-form-field appearance="fill">
-            <mat-label>Name</mat-label>
-            <input matInput>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Price</mat-label>
-            <input matInput>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Amount Available</mat-label>
-            <input matInput>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Description</mat-label>
-            <input matInput>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Cathegory</mat-label>
-            <mat-select>
-                <mat-option value="one">First option</mat-option>
-                <mat-option value="two">Second option</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <button mat-raised-button class="btn--primary" color="primary" aria-label="Save Product">
-            Save
-        </button>
-    </div>
+    <form (submit)="saveProduct()" [formGroup]="createProductForm" class="form">
+        <div class="form-content">
+            <mat-form-field appearance="fill">
+                <mat-label style="color:rgb(171, 171, 171)">Name</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label style="color:rgb(171, 171, 171)">Price</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label style="color:rgb(171, 171, 171)">Amount Available</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label style="color:rgb(171, 171, 171)">Description</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label style="color:rgb(171, 171, 171)">Cathegory</mat-label>
+                <mat-select formControlName="cathegoryId">
+                    <mat-option *ngFor="let cathegory of cathegories" [value]="cathegory.id">
+                        {{ cathegory.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button class="btn--primary" color="primary" aria-label="Save Product" type="submit">
+                Save
+            </button>
+        </div>
+    </form>
 </div>

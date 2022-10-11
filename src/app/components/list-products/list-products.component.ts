@@ -2,10 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-
+import { Router } from '@angular/router';
+import { ColDef } from 'ag-grid-community';
+import { Email } from 'src/app/shared/model/email.model';
 import { Product } from 'src/app/shared/model/product.model';
 import { ProductService } from 'src/app/shared/services/product.service';
-import { Router } from '@angular/router';
 import Constants from 'src/app/shared/utils/constants';
 
 @Component({
@@ -15,6 +16,7 @@ import Constants from 'src/app/shared/utils/constants';
 })
 export class ListProductsComponent implements OnInit {
 
+ 
   public productsRowData: Product[] = [];
 
   displayedColumns: string[] = [
