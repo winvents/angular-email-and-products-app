@@ -53,3 +53,19 @@ Utilize o comando
 ```
 npm start
 ```
+
+✅ Testando o Angular App
+------------------------------------------------------------------------
+Devemos conseguir ver os emails enviados e filtrá-los por uma data específica.
+![image](https://user-images.githubusercontent.com/52979585/195611502-0a1cbd65-7010-40d5-b146-5cedb6f100e3.png)
+
+Aplicando um filtro que não contempla nenhum registro no banco de dados:
+![image](https://user-images.githubusercontent.com/52979585/195613532-83105497-1d60-41d8-87f0-240aec1ea107.png)
+
+🆕 Cadastrando um produto
+------------------------------------------------------------------------
+No formulário de cadastro, podemos inserir todas as informações da entidade Produto. Na service criada no Angular, por debaixo dos panos, fazemos uma consulta na API das categorias previamente inseridas no banco e renderizamos em um dropdown, já que essa também é uma entidade.
+![image](https://user-images.githubusercontent.com/52979585/195612718-6c42cbe3-e7aa-4630-9375-8532bcab4032.png)
+
+Vemos o dado devidamente renderizado após a inserção.
+![image](https://user-images.githubusercontent.com/52979585/195612953-971f3858-48f1-4e72-85c5-fda953403937.png)
