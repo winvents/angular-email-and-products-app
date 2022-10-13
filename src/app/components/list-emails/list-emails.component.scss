@@ -2,7 +2,7 @@ table {
   width: 100%;
 }
 
-.content-table {
+.content-table, .btn-search{
   padding: 0px 3rem;
 }
 
@@ -10,3 +10,6 @@ table {
   text-align: center;
 }
 
+input {
+  color-scheme: dark;
+}

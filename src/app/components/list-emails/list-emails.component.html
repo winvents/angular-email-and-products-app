@@ -6,13 +6,19 @@
       </h1>
     </div>
   </div>
+  <div class="btn-search">
+    <mat-form-field appearance="standard">
+      <mat-label>Filter</mat-label>
+      <input type="date" matInput (keyup)="applyFilter($event)" matInput placeholder="Search columns" #input>
+    </mat-form-field>
+  </div>
   <div class="content-table">
     <table class="darkMode" mat-table [dataSource]="dataSource" matSort>
 
       <mat-form-field appearance="standard">
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Search columns" #input>
-    </mat-form-field>
+      </mat-form-field>
 
       <ng-container matColumnDef="dateSent">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Date sent </th>

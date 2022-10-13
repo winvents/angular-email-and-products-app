@@ -23,8 +23,17 @@ button {
   .mat-form-field-empty.mat-form-field-label,
   .mat-form-field-label,
   .mat-form-field-underline,
-  .mat-input-element,
+  .mat-input-element
   ::placeholder {
     color: rgb(255, 255, 255) !important;
   }
 }
+
+.content-table {
+  padding: 0px 3rem;
+}
+
+.content-header {
+  text-align: center;
+}
+
