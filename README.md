@@ -69,3 +69,7 @@ No formulário de cadastro, podemos inserir todas as informações da entidade P
 
 Vemos o dado devidamente renderizado após a inserção.
 ![image](https://user-images.githubusercontent.com/52979585/195612953-971f3858-48f1-4e72-85c5-fda953403937.png)
+
+## Feedback
+
+*Obrigada por chegar até aqui, professor! Se você tiver algum feedback, por favor nos deixe saber pelo Teams*
